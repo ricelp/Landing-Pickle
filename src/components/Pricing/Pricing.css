@@ -1,0 +1,133 @@
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.8rem;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 242, 77, 0.35);
+  box-shadow: var(--shadow-md);
+}
+
+.pricing-card--recommended {
+  background: linear-gradient(180deg, rgba(201, 242, 77, 0.08), rgba(10, 14, 28, 0) 55%), var(--surface);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.pricing-card__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pricing-card__badge svg {
+  width: 0.95em;
+  height: 0.95em;
+}
+
+.pricing-card__name {
+  font-size: 1.3rem;
+}
+
+.pricing-card__tagline {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.pricing-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.pricing-card__price strong {
+  font-size: 2.6rem;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.pricing-card__price span {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.pricing-card__duration {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+}
+
+.pricing-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.pricing-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.93rem;
+  color: var(--text-muted);
+}
+
+.pricing-card__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(61, 220, 132, 0.15);
+  color: var(--success);
+  flex: none;
+  margin-top: 1px;
+}
+
+.pricing-card__check svg {
+  width: 13px;
+  height: 13px;
+}
+
+.pricing-card__cta {
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+}
